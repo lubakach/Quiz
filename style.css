@@ -374,6 +374,9 @@ form button {
     display: flex;
     align-items: center;
 }
+.input:focus {
+    border: 1px solid cornflowerblue;
+}
 .custom-radio {
     position: absolute;
     z-index: -1;
