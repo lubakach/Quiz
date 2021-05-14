@@ -68,7 +68,7 @@ body{
 
 
 }
-h2 {
+h2{
     color: #4F9B9D;
     font-family: var(--font-family);
 
@@ -84,6 +84,19 @@ h2 {
 
 }
 
+label {
+    font-weight: bold;
+    color: #4F9B9D;
+    font-family: var(--font-family);
+
+    display: flex;
+    box-sizing: border-box;
+    margin: 0.5rem;
+
+    align-items: center;
+    line-height: 40px;
+    font-size: 1.5rem;
+}
 header h1{
     font-style: normal;
     font-weight: 600;
@@ -172,6 +185,15 @@ h6 {
     padding: 0 2rem;
     color: #4F9B9D;
 }
+.passwords{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 2rem;
+    color: #4F9B9D;
+}
+
 .answers.create{
     padding: 1.5rem;
     display: flex;
@@ -192,8 +214,8 @@ h6 {
 }
 
 .option .input
-
-.question-card-open .answer-open{
+question-card-o
+.pen .answer-open{
     background: var(--color-main);
     border-radius: 0px 0px 30px 30px;
     height: 40%;
@@ -232,6 +254,8 @@ form button {
     line-height: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
     border: 1px solid #FECDCE;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -240,7 +264,15 @@ form button {
 }
 
 .answers label{
-    font-size: 1.25rem;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: flex;
+    font-family: var(--font-family);
+}
+
+.passwords label{
+    font-weight: bold;
+    font-size: 1.5rem;
     display: flex;
     margin: 5% 0;
     font-family: var(--font-family);
@@ -254,6 +286,14 @@ form button {
     width: 100%;
     flex-direction: column;
 }
+.passwords{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+}
+
 .answers.result{
     display: flex;
     align-items: center;
@@ -283,6 +323,9 @@ form button {
     align-content: center;
     justify-content: center;
     margin: 0.5rem;
+    align-items: center;
+
+
 }
 .button-box h2{
     color: #4F9B9D;
@@ -321,6 +364,7 @@ form button {
     background-color:white;
     border-radius: 30px;
     margin-top: 15px;
+    margin-bottom: 15px;
     border: 1px solid #FECDCE;
     box-sizing: border-box;
     font-style: normal;
