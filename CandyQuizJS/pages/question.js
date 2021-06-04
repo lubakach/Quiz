@@ -25,7 +25,7 @@ const answers = [];
 
 export default {
     async render(gameId){
-        playQuestions = Model.getQuestions(gameId);
+        playQuestions = await Model.getQuestions(gameId);
         await playGame(0);
     }
 }
