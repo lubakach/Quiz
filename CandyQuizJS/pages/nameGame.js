@@ -14,18 +14,18 @@ export default {
         document.getElementById('buttonOptionCreate').onclick = buttonOptionCreate;
     }
 }
-async function buttonOpenCreate(){
+function buttonOpenCreate(){
     const form = document.getElementById("createGame");
     let data = {game_name: form.elements.game_name.value };
-    const id = await Model.putNewGame(data);
+    const id = Model.putNewGame(data);
     localStorage.setItem("type", '1');
     window.location.href = window.location.href.split('/').slice(0, -1).join('/')
         + '#addQuestion/' + id;
 }
-async function buttonOptionCreate(){
+function buttonOptionCreate(){
     const form = document.getElementById("createGame");
     let data = {game_name: form.elements.game_name.value };
-    const id = await Model.putNewGame(data);
+    const id = Model.putNewGame(data);
     localStorage.setItem("type", '4');
     window.location.href = window.location.href.split('/').slice(0, -1).join('/')
         + '#addQuestion/' + id;

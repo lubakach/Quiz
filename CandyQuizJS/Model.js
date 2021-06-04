@@ -1,23 +1,11 @@
-const db = firebase.firestore();
-
 export default {
-    async getGames(){
-        const snapshot = await db.collection("games").get();
-        const games = [];
-        snapshot.forEach((game) => {
-            games.push(game.data());
-        })
-        return games;
+    getGames(){
+        return Object.values(JSON.parse(localStorage.games));
     },
-    async getGamesDic(){
-        const snapshot = await db.collection("games").get();
-        const games = {};
-        snapshot.forEach((game) => {
-            games[game.id] = game.data();
-        })
-        return games;
+    getGamesDic(){
+        return JSON.parse(localStorage.games)
     },
-    async putNewGame(data){
+    putNewGame(data){
         const games = JSON.parse(localStorage.games);
         const date = new Date();
         const id = date.getFullYear().toString() +
@@ -29,19 +17,17 @@ export default {
             questions: []
         }
         games[id] = game;
-        await db.collection("games").doc(id).set(game);
         localStorage.setItem('games', JSON.stringify(games));
         return id
     },
-    async getQuestions(gameId){
-        const games = await this.getGamesDic();
+    getQuestions(gameId){
+        const games = JSON.parse(localStorage.games);
         return games[gameId].questions;
     },
-    async putQuestions(gameId, questions){
+    putQuestions(gameId, questions){
         const games = this.getGamesDic()
-        const game = games[gameId];
-        game.questions = questions;
-        await db.collection("games").doc(gameId).set(game);
+        games[gameId].questions = questions;
+        localStorage.setItem('games', JSON.stringify(games));
         return games[gameId].questions.length;
     },
 }

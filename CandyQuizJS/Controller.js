@@ -12,7 +12,7 @@ export default {
         startPage.render();
     },
     async menuRoute(params){
-        menuPage.setData(await Model.getGames());
+        menuPage.setData(Object.values(Model.getGames()));
         menuPage.render();
     },
     async questionRoute(params){

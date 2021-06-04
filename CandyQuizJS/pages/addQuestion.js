@@ -82,7 +82,7 @@ function renderQuestion(){
     questionBox.innerHTML = View.render('addQuestion' + currentQuestion.type);
 }
 
-async function addQuestion(type){
+function addQuestion(type){
     currentQuestions[currentQuestion.questionId] = getData();
     currentQuestion =
         {
@@ -91,7 +91,7 @@ async function addQuestion(type){
             time: currentQuestion.time
         };
     currentQuestions.push(currentQuestion);
-    await Model.putQuestions(localStorage.gameId, currentQuestions);
+    Model.putQuestions(localStorage.gameId, currentQuestions);
     localStorage.setItem("currentQuestions", JSON.stringify(currentQuestions));
     localStorage.setItem("currentQuestion", JSON.stringify(currentQuestion));
     renderQuestion();
